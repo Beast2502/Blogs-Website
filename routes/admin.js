@@ -22,11 +22,7 @@ router.post('/add-product',(req,res,next)=>{
 
 });
 
-console.log("Form se data add hua",products);
 
 
-module.exports = {
-    routes : router,
-    products : products,
-   
-}
+exports.routes = router;
+exports.products = products;

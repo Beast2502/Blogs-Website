@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="logo"><h1>Blogs</h1></div>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Blogs</a></li>
+                <li class="main-header__item"><a href="/add-product">Add Blogs</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1>Blogs</h1>
+        <p>List of Blogs</p>
+        <% if(prods.length > 0){ %>
+            <% for (let product of prods) { %>
+                <div class="card">
+                    <img src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png" alt="Avatar" style="width:20%">
+                    <div class="container">
+                      <h4><b><%= product.title %></b></h4>
+                    </div>
+                    <button type="submit">View More</button>
+                  </div>
+             <% } %>  
+        <% } else { %>
+            <h1>No products Found</h1>
+        <% } %>
+    </main>
+</body>
+</html>
