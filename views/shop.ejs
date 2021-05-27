@@ -1,14 +1,20 @@
-<%- include('includes/head.ejs') %>
+<%- include('./includes/head.ejs') %>
 <body>
+    <link rel="stylesheet" href="/css/main.css">
     <div class="logo"><h1>Blogs</h1></div>
     <header class="main-header">
-        <%- include('includes/navigation.ejs') %>
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Blogs</a></li>
+                <li class="main-header__item"><a href="/add-product">Add Blogs</a></li>
+            </ul>
 
         </nav>
     </header>
 
     <main>
-        <h2>List Of Blogs</h2>
+        <h1>Blogs</h1>
+        <p>List of Blogs</p>
         <% if(prods.length > 0){ %>
             <% for (let product of prods) { %>
                 <div class="card">
