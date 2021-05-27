@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= pageTitle %></title>
-    <link rel="stylesheet" href="/css/main.css">
-</head>
+<%- include('includes/head.ejs') %>
 <body>
     <div class="logo"><h1>Blogs</h1></div>
     <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="active" href="/">Blogs</a></li>
-                <li class="main-header__item"><a href="/add-product">Add Blogs</a></li>
-            </ul>
+        <%- include('includes/navigation.ejs') %>
 
         </nav>
     </header>
 
     <main>
-        <h1>Blogs</h1>
-        <p>List of Blogs</p>
+        <h2>List Of Blogs</h2>
         <% if(prods.length > 0){ %>
             <% for (let product of prods) { %>
                 <div class="card">
