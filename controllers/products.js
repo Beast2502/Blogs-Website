@@ -16,19 +16,23 @@ exports.postAddProduct = (req,res,next)=>{
     //products.push({title : req.body.title});
     const product = new Product(req.body.title);
     product.save();
-    console.log(product);
+    console.log("PostAddProduct",product);
     res.redirect('/admin/add-product');
 
 }
 
 exports.getProducts = (req,res,next)=>{
-    const products = Product.fetchAll();
-    res.render('shop' , {
-        prods : products ,
-        pageTitle: 'Blog',
-        path: '/',
-        hasProducts: products.length > 0,
-        activeShop: true,
-        productCSS: true
+
+    Product.fetchAll((products)=>{
+        res.render('shop' , {
+            prods : products ,
+            pageTitle: 'Blog',
+            path: '/',
+            hasProducts: products.length > 0,
+            activeShop: true,
+            productCSS: true
+        });
+
     });
+   
 }
